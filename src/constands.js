@@ -43,7 +43,7 @@ else {
 
 	for(var i = 0; i != constants.length - 1; i++) {
 		var c = constants[i]; 
-		console.log("#define GL_" + c.name + " " + c.value); 
+		console.log("#define GL_" + c.name + " " + eval(c.value)); 
 	}
 
 	console.log(""); 
