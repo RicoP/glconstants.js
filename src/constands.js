@@ -25,16 +25,10 @@ constants = webGlContext.members.filter(function(m) {
 }); 
 
 if(!useDefine) { 
-	console.log("var"); 
-
-	var c; 
-	for(var i = 0; i != constants.length - 1; i++) {
-		c = constants[i]; 
-		console.log("  GL_" + c.name + " = " + c.value + ","); 
+	for(var i = 0; i != constants.length; i++) {
+		var c = constants[i]; 
+		console.log("var GL_" + c.name + " = " + eval(c.value) + ";"); 
 	}
-
-	c = constants[i]; 
-	console.log("  GL_" + c.name + " = " + c.value + ";"); 
 }
 else {	
 	console.log("#ifndef GLCONSTANTS_H"); 
